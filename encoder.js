@@ -39,13 +39,14 @@ document.getElementById("textArea").innerHTML += letters[e.keyCode];
 } else if ($("input:checked").val()== "caesar cipher") {
 document.getElementById("textArea").innerHTML += letters[e.keyCode - 1];
 
-} else if ($("input:checked").val()== "heiroglyphic") {
-var hieroglyphicsString = "<img src = 'images/heiroglyphic/"  + letters[e.keyCode] + ".gif'>"
+} else if ($("input:checked").val()== "heiroglyphics") {
+var hieroglyphicsString = "<img src = 'images/heiroglyphics/"  + letters[e.keyCode] + ".gif'>"
 document.getElementById("textArea").innerHTML += hieroglyphicsString ;
 }
 
 });
 
+//radio button check
 $("input[type='radio']").click(function() {
 $("input:checked").prop('checked', false);
 $(this).prop('checked', true)
