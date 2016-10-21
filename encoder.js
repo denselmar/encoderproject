@@ -1,16 +1,47 @@
+//for echo
+var letters = {
+  64:"z",
+  65:"a",
+  66:"b",
+  67:"c",
+  68:"d",
+  69:"e",
+  70:"f",
+  71:"g",
+  72:"h",
+  73:"i",
+  74:"j",
+  75:"k",
+  76:"l",
+  77:"m",
+  78:"n",
+  79:"o",
+  80:"p",
+  81:"q",
+  82:"r",
+  83:"s",
+  84:"t",
+  85:"u",
+  86:"v",
+  87:"w",
+  88:"x",
+  89:"y",
+  90:"z"
+}
+
 $("#inputText").keyup(function(e) {
- var inputText = document.getElementById("inputText").value;
- document.getElementById("textArea").innerHTML = inputText;
+
+ //radio buttons
 
  if ($("input:checked").val()== "echo") {
-document.getElementById("textArea").innerHTML = inputText;
+document.getElementById("textArea").innerHTML += letters[e.keyCode];
 
-} else if ($("input:checked").val()== "caesar") {
-document.getElementById("textArea").innerHTML = inputText;
+} else if ($("input:checked").val()== "caesar cipher") {
+document.getElementById("textArea").innerHTML += letters[e.keyCode - 1];
 
 } else if ($("input:checked").val()== "heiroglyphic") {
-document.getElementById("textArea").innerHTML = inputText;
-
+var hieroglyphicsString = "<img src = 'images/heiroglyphic/"  + letters[e.keyCode] + ".gif'>"
+document.getElementById("textArea").innerHTML += hieroglyphicsString ;
 }
 
 });
